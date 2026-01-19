@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ejercicio7();
+        ejercicio9();
     }
 
     public static void ejemplo1() {
@@ -96,5 +96,48 @@ public class Main {
             }
             i++;
         }
+    }
+
+    public static void ejercicio8() {
+        String usuario = "Pepe";
+        String contra = "1234";
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce tu usuario: ");
+        String usu = sc.nextLine();
+        System.out.println("Introduce tu contra: ");
+        String psw = sc.nextLine();
+        if (usu.equals(usuario) && psw.equals(contra)) {
+            System.out.println("Login correcto");
+            break;
+        } else {
+            System.out.println("Usuario o contraseña incorrecto");
+        }
+        }
+    }
+
+    public static void ejercicio9() {{
+        String usuario = "Pepe";
+        String contra = "1234";
+        int intentosrestantes = 3;
+        while (intentosrestantes > 0) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Introduce tu usuario: ");
+            String usu = sc.nextLine();
+            System.out.println("Introduce tu contra: ");
+            String psw = sc.nextLine();
+            if (usu.equals(usuario) && psw.equals(contra)) {
+                System.out.println("Login correcto");
+                break;
+            } else {
+                System.out.println("Usuario o contraseña incorrecto");
+                intentosrestantes--;
+                if (intentosrestantes == 0) {
+                    System.out.println("Demasiados intentos");
+                }
+            }
+        }
+    }
+
     }
 }
